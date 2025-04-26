@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,13 +15,15 @@ namespace Clock
     {
         private static System.Timers.Timer timer = new System.Timers.Timer(1000);
 
+
+        private string currentTime = DateTime.Now.ToString("hh:mm:ss tt");
+
+
         public clockUserControl()
         {
             InitializeComponent();
+            clockLabel.Text = currentTime;
             RunClock();
-
-            
-
 
         }
 
@@ -33,10 +36,23 @@ namespace Clock
 
         private void Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
         {
-            clockLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
-
+            currentTime = DateTime.Now.ToString("hh:mm:ss tt");
+            if(clockLabel.InvokeRequired)
+            {
+                Action cleanUpdate = delegate { UpdateClockLabel(currentTime); };
+                clockLabel.Invoke(cleanUpdate);
+            }
+            else
+            {
+                UpdateClockLabel(currentTime);
+            }
         }
 
+        private void UpdateClockLabel(string newTime)
+        {
+            clockLabel.Text = newTime;
+            Refresh();
+        }
 
     }
 }
