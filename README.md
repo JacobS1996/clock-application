@@ -23,4 +23,3 @@ This project is open-source and licensed under the MIT License. You are free to 
 
 This application was developed for practice and demonstration purposes only and, as such, will likely not be improved upon in the future. That being said, the skills learned and applied during the development of this application may very well be used in future projects. 
 
-# Credits
