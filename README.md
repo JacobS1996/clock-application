@@ -9,7 +9,7 @@ This is a simple application that I created using Windows Forms. It is just a cl
 
 # How to Build
 
-Ensure that you have Visual Studio (not Visual Studio Code) installed. On the GitHub repository, select the code drop-down button. Choose the option to open in Visual Studio. 
+Ensure that you have Visual Studio (not Visual Studio Code) along with the ".Net desktop development" workload installed. On the GitHub repository, select the code drop-down button. Choose the option to open in Visual Studio. 
 
 Once the repository is cloned to your machine, it should run from Visual Studio without any issues. If, after following these steps, the application will not build, please reach out to me via my GitHub contact information, and I try to resolve any issues and/or edit these instructions. 
 
